@@ -62,7 +62,7 @@ Balboa32U4Encoders encoders;
 Balboa32U4Buzzer buzzer;
 Balboa32U4ButtonA buttonA;
 
-#define FIXED_ANGLE_CORRECTION (0.27) // ***** Replace the value 0.25 with the value you obtained from the Gyro calibration procedure
+#define FIXED_ANGLE_CORRECTION (0.26) // ***** Replace the value 0.25 with the value you obtained from the Gyro calibration procedure
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // This is the main function that performs the balancing
@@ -76,14 +76,15 @@ void BalanceRocky()
   // TODO
   // **************Enter the control parameters here
 
-  float Kp = 0;
-  float Ki = 0;
+  float Kp = 1391;
+  float Ki = 14270;
   float Ci = 0;
   float Jp = 0;
   float Ji = 0;
 
+
   float v_c_L, v_c_R; // these are the control velocities to be sent to the motors
-  float v_d = 0;      // this is the desired speed produced by the angle controller
+  float v_d = 300;    // this is the desired speed produced by the angle controller
 
   // Variables available to you are:
   // angle_rad  - angle in radians
@@ -94,7 +95,6 @@ void BalanceRocky()
   // distRight_m - distance traveled by right wheel in meters  (this is the integral of the velocities)
   // dist_accum - integral of the distance
 
-  // TODO
   // *** enter an equation for v_d in terms of the variables available ****
   // This is Angle_output * K(s)
   v_d = angle_rad * Kp + angle_rad_accum * Ki;
@@ -106,11 +106,11 @@ void BalanceRocky()
   // right to left. This helps ensure that the Left and Right motors are balanced
   // TODO
   // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
-  v_c_R =
-      v_c_L =
+  v_c_R = v_d;
+  v_c_L = v_d;
 
-          // save desired speed for debugging
-      desSpeedL = v_c_L;
+  // save desired speed for debugging
+  desSpeedL = v_c_L;
   desSpeedR = v_c_R;
 
   // the motor control signal has to be between +- 300. So clip the values to be within that range
