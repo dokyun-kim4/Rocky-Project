@@ -20,7 +20,7 @@
 #include <LSM6.h>
 #include "Balance.h"
 
-// #define SERIAL_MONITOR_MODE     // comment out this line to take out of reset/print mode
+#define SERIAL_MONITOR_MODE     // comment out this line to take out of reset/print mode
 
 extern int32_t angle_accum;
 extern int32_t speedLeft;
