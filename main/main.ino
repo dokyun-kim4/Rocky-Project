@@ -62,7 +62,7 @@ Balboa32U4Encoders encoders;
 Balboa32U4Buzzer buzzer;
 Balboa32U4ButtonA buttonA;
 
-#define FIXED_ANGLE_CORRECTION (0.26) // ***** Replace the value 0.25 with the value you obtained from the Gyro calibration procedure
+#define FIXED_ANGLE_CORRECTION (0.27) // ***** Replace the value 0.25 with the value you obtained from the Gyro calibration procedure
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // This is the main function that performs the balancing
@@ -73,7 +73,7 @@ Balboa32U4ButtonA buttonA;
 
 void BalanceRocky()
 {
-
+  // TODO
   // **************Enter the control parameters here
 
   float Kp = 0;
@@ -94,6 +94,7 @@ void BalanceRocky()
   // distRight_m - distance traveled by right wheel in meters  (this is the integral of the velocities)
   // dist_accum - integral of the distance
 
+  // TODO
   // *** enter an equation for v_d in terms of the variables available ****
   v_d = // this is the desired velocity from the angle controller
 
@@ -102,7 +103,7 @@ void BalanceRocky()
       //
       // We use a trick here by criss-crossing the distance from left to right and
       // right to left. This helps ensure that the Left and Right motors are balanced
-
+      // TODO
       // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
       v_c_R =
           v_c_L =
