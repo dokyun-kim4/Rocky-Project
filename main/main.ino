@@ -96,19 +96,20 @@ void BalanceRocky()
 
   // TODO
   // *** enter an equation for v_d in terms of the variables available ****
-  v_d = // this is the desired velocity from the angle controller
+  // This is Angle_output * K(s)
+  v_d = angle_rad * Kp + angle_rad_accum * Ki;
 
-      // The next two lines implement the feedback controller for the motor. Two separate velocities are calculated.
-      //
-      //
-      // We use a trick here by criss-crossing the distance from left to right and
-      // right to left. This helps ensure that the Left and Right motors are balanced
-      // TODO
-      // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
-      v_c_R =
-          v_c_L =
+  // The next two lines implement the feedback controller for the motor. Two separate velocities are calculated.
+  //
+  //
+  // We use a trick here by criss-crossing the distance from left to right and
+  // right to left. This helps ensure that the Left and Right motors are balanced
+  // TODO
+  // *** enter equations for input signals for v_c (left and right) in terms of the variables available ****
+  v_c_R =
+      v_c_L =
 
-              // save desired speed for debugging
+          // save desired speed for debugging
       desSpeedL = v_c_L;
   desSpeedR = v_c_R;
 
