@@ -59,11 +59,19 @@ Hcloop_sub = subs(Hcloop) % sub parameter values into Hcloop
 % p4 = -8
 % p5 = -8.
 
-p1 = -1 + 2*i   % dominant pole pair
-p2 = -1 -2*i    % dominant pole pair
-p3 = -6
-p4 = -42    % dominant pole pair
-p5 = -24     % dominant pole pair
+% This works somewhat
+% zeta1 = 0.8;
+% zeta2 = 0.7;
+
+% This also works
+zeta1 = 0.9;
+zeta2 = 0.8;
+wn = 4.6542;
+p1 = -zeta1*wn + wn*sqrt(1-zeta1^2) * 1i;   % dominant pole pair
+p2 = -zeta1*wn - wn*sqrt(1-zeta1^2) * 1i;      % dominant pole pair
+p3 = -6;
+p4 = -zeta2*wn + wn*sqrt(1-zeta2^2) * 1i;    % dominant pole pair
+p5 = -zeta2*wn - wn*sqrt(1-zeta2^2) * 1i;     % dominant pole pair
 
 % target characteristic polynomial
 % if motor model (TF) is added, order of polynomial will increases
@@ -122,7 +130,7 @@ check_closed_loop_poles = vpa (roots(subs(chk_coeffs_denom)), 4)
 %     *(s-check_closed_loop_poles(3))*(s-check_closed_loop_poles(4)) ...
 %     *(s-check_closed_loop_poles(5)) ) )
 
-
+disp(Kp);
 
 % Plot impulse and step responses of closed-loop system
 TFstring = char(subs(Hcloop));
