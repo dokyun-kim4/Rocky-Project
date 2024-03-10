@@ -64,12 +64,12 @@ Hcloop_sub = subs(Hcloop) % sub parameter values into Hcloop
 % zeta2 = 0.7;
 
 % This also works
-zeta1 = 0.9;
+zeta1 = 0.7;
 zeta2 = 0.8;
 wn = 4.6542;
 p1 = -zeta1*wn + wn*sqrt(1-zeta1^2) * 1i;   % dominant pole pair
 p2 = -zeta1*wn - wn*sqrt(1-zeta1^2) * 1i;      % dominant pole pair
-p3 = -6;
+p3 = -7;
 p4 = -zeta2*wn + wn*sqrt(1-zeta2^2) * 1i;    % dominant pole pair
 p5 = -zeta2*wn - wn*sqrt(1-zeta2^2) * 1i;     % dominant pole pair
 

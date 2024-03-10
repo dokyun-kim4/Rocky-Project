@@ -46,10 +46,17 @@ Hcloop_sub = subs(Hcloop) % sub parameter values into Hcloop
 
 % specify locations of the target poles,
 % choose # based on order of Htot denominator
+zeta = 0.7;
+wn = 4.6542;
+
+% zeta = 1
+% wn = 2*pi
+real_part = zeta*wn;
+img_part = wn*sqrt(1-zeta^2);
 % e.g., want some oscillations, want fast decay, etc. 
-p1 = -1 + 2*pi*i    % dominant pole pair
-p2 = -1 - 2*pi*i    % dominant pole pair 
-p3 = -10
+p1 = -real_part + img_part*i;    % dominant pole pair
+p2 = -real_part - img_part*i;      % dominant pole pair 
+p3 = -7;
 
 
 % target characteristic polynomial
