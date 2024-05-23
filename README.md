@@ -1,4 +1,4 @@
-# Rocky Project: Controlling an Inverse Pendulum with PID controllers 
+# Rocky Project: Controlling an Inverse Pendulum with a PID controller
 ### Authors: Dexter Friis-Hecht, Dokyun Kim, Mo Ampane
 
 ## Project Report
